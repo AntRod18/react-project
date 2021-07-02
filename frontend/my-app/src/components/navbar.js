@@ -17,6 +17,9 @@ export default class Navigationbar extends React.Component {
                     <LinkContainer to="/lists">
                       <Nav.Link>Lists</Nav.Link>
                     </LinkContainer>
+                    <LinkContainer to="/parts">
+                      <Nav.Link>Parts</Nav.Link>
+                    </LinkContainer>
                     
                   </Nav>
                 </Navbar.Collapse>

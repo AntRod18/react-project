@@ -1,6 +1,7 @@
 import Navigationbar from './components/navbar.js';
 import Welcome from './components/welcome.js';
 import List from './components/list.js';
+import Part from './components/part.js'
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/home" component={Welcome} />
           <Route exact path="/lists" component={List} />
+          <Route exact path="/parts" component={Part} />
         </Switch>
       </div>
     </Router>
