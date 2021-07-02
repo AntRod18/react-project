@@ -1,12 +1,24 @@
 import Navigationbar from './components/navbar.js';
 import Welcome from './components/welcome.js';
+import List from './components/list.js';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       <Navigationbar />
-      <Welcome />
-    </div>
+        <Switch>
+          <Route exact path="/home" component={Welcome} />
+          <Route exact path="/lists" component={List} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
