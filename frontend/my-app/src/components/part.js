@@ -1,11 +1,34 @@
-import React from "react";
+import React, {Component} from 'react'
+import { Card, Row, Col } from 'react-bootstrap'
 
-export default class Part extends React.Component {
-    render(){
-        return(
-            <div>
+
+class Part extends Component {
+
+    render() {
+        const { name, kind, price } = this.props.parts
+        return (
+            
                 
-            </div>
+                    <Row>
+                        <Col lg={3}>
+                            <Card>
+                                <Card.Header>{kind}</Card.Header>
+                                <Card.Body>
+                                    <Card.Title>{name}</Card.Title>
+                                    <Card.Text>
+                                    {price}
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                
+                    
+            
         )
     }
 }
+
+
+
+export default Part

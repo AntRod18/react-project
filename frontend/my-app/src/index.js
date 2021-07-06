@@ -4,10 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {createStore} from 'redux'
-import {Provider} from 'react-redux'
+import {createStore, applyMiddleware, combineReducers, compose} from 'redux';
+import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
+import listReducer from './reducers/listReducer';
+import partsReducer from './reducers/partsReducer';
 
-const store = createStore(() => {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(combineReducers({listReducer, partsReducer}) ,compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+ )
 
 ReactDOM.render(
   <React.StrictMode>
