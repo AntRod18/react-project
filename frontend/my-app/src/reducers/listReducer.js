@@ -7,8 +7,14 @@ const listReducer = (state = initialState, action) => {
         case "Add-List":
             return {
                 ...state,
-                parts: [...state.list, action.payload]
+                list: [...state.list, action.payload]
             }
+        case "Get_Lists":
+            return {
+                ...state,
+                list: [...state.list, ...action.payload]
+            }
+
         default:
             return state
     }

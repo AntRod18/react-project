@@ -5,12 +5,15 @@ import { fetchParts } from '../actions/parts'
 
 class PartsList extends Component {
 
-
+    componentDidMount() {
+        this.props.fetchParts()
+    }
 
     render() {
         const parts = this.props.parts.map(p => <Part parts={p} />)
         return (
-            <div>
+            <div id="parts-container">
+                <h1>Parts currently available:</h1>
                 {parts}
             </div>
         )

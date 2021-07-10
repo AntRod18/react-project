@@ -1,23 +1,18 @@
 import Navigationbar from './components/navbar.js';
 import Welcome from './components/welcome.js';
-import List from './components/list.js';
-import Part from './components/part.js'
+import ListOfList from './components/listsOfList';
 import PartsList from './components/partslist' 
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import { Component } from 'react';
-import { fetchParts } from './actions/parts'
-import { connect } from 'react-redux';
+
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.fetchParts()
-}
+
 
   render(){
   return (
@@ -26,7 +21,7 @@ class App extends Component {
       <Navigationbar />
         <Switch>
           <Route exact path="/home" component={Welcome} />
-          <Route exact path="/lists" component={List} />
+          <Route exact path="/lists" component={ListOfList} />
           <Route exact path="/parts" component={PartsList} />
         </Switch>
       </div>
@@ -35,4 +30,4 @@ class App extends Component {
 }
 }
 
-export default connect(null, { fetchParts })(App);
+export default App

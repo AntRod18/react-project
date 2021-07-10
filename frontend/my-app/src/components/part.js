@@ -7,24 +7,19 @@ class Part extends Component {
     render() {
         const { name, kind, price } = this.props.parts
         return (
-            
-                
-                    <Row>
-                        <Col lg={3}>
-                            <Card>
-                                <Card.Header>{kind}</Card.Header>
-                                <Card.Body>
-                                    <Card.Title>{name}</Card.Title>
-                                    <Card.Text>
-                                    {price}
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-                
-                    
-            
+            <Row lg="3">
+                <Col> 
+                    <Card>
+                        <Card.Header>{kind}</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{name}</Card.Title>
+                                <Card.Text>
+                                {price}
+                                </Card.Text>
+                            </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
         )
     }
 }
