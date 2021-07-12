@@ -16,7 +16,7 @@ class PartsController < ApplicationController
   # POST /parts
   def create
     @part = Part.new(part_params)
-
+    @part.components.build(name: "cpu")
     if @part.save
       render json: @part, status: :created, location: @part
     else

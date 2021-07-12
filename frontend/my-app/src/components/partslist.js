@@ -2,6 +2,7 @@ import { Component } from "react";
 import { connect } from 'react-redux'
 import  Part  from './part'
 import { fetchParts } from '../actions/parts'
+import { Row } from 'react-bootstrap'
 
 class PartsList extends Component {
 
@@ -12,9 +13,11 @@ class PartsList extends Component {
     render() {
         const parts = this.props.parts.map(p => <Part parts={p} />)
         return (
-            <div id="parts-container">
+            <div>
                 <h1>Parts currently available:</h1>
-                {parts}
+                <Row lg="3" id="parts-container">
+                    {parts}
+                </Row>
             </div>
         )
     }

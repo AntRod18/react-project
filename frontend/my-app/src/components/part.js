@@ -7,7 +7,7 @@ class Part extends Component {
     render() {
         const { name, kind, price } = this.props.parts
         return (
-            <Row lg="3">
+            <div>
                 <Col> 
                     <Card>
                         <Card.Header>{kind}</Card.Header>
@@ -19,7 +19,7 @@ class Part extends Component {
                             </Card.Body>
                     </Card>
                 </Col>
-            </Row>
+            </div>
         )
     }
 }
