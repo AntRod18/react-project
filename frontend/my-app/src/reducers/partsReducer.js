@@ -13,7 +13,7 @@ const partsReducer = (state = initialState, action) => {
            case "Get_Parts":
                return{
                    ...state,
-                   parts: [...state.parts, ...action.payload]
+                   parts: [...action.payload]
                }
        default:
            return state

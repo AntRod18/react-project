@@ -31,4 +31,4 @@ Part.create(name:"Lian Li PC-O11 Dynamic", kind:"case", price: 150)
 Part.create(name:"Corsair 4000D Airflow", kind:"case", price: 95)
 Part.create(name:"Phanteks Eclipse P400A Digital", kind:"case", price: 90)
 
-List.create(name:"First List")
+List.create(name:"first list")

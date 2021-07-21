@@ -15,8 +15,9 @@ class ComponentsController < ApplicationController
 
   # POST /components
   def create
-    @component = Component.new(component_params)
-
+    # @list = List.find_by_id(params[:list_id])
+    # @part = Part.find_by_id(params[:part_id])
+    @component = Component.create(component_params)
     if @component.save
       render json: @component, status: :created, location: @component
     else
@@ -46,6 +47,6 @@ class ComponentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def component_params
-      params.require(:component).permit(:name)
+      params.require(:component).permit(:kind, :list_id, :part_id)
     end
 end

@@ -7,9 +7,7 @@ import ListForm from "./listForm";
 
 class ListsOfList extends Component {
 
-    componentDidMount() {
-        this.props.fetchLists()
-    }
+    
 
     render() {
         const lists = this.props.list.map(l => <List list={l} />)
@@ -29,4 +27,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { fetchLists })(ListsOfList)
+export default connect(mapStateToProps)(ListsOfList)

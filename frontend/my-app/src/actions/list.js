@@ -7,6 +7,13 @@ export const addList = (listObj) => {
     }
 }
 
+export const addComponents = (compObj) => {
+    return{
+        type:"Add-Components",
+        payload: compObj
+    }
+}
+
 export const createList = (list) => {
     return (dispatch) => {
         fetch("http://localhost:3001/lists", {
@@ -20,6 +27,23 @@ export const createList = (list) => {
         .then(resp => resp.json())
         .then(list => {
             dispatch(addList(list))
+        })
+    }
+}
+
+export const createComponents = (component) => {
+    return (dispatch) => {
+        fetch("http://localhost:3001/components", {
+            method: 'Post',
+            headers: {
+                'Content-Type': 'application/json',
+                'accept': 'application/json'
+            },
+            body: JSON.stringify({component}),
+        })
+        .then(resp => resp.json())
+        .then(c => {
+            dispatch(addComponents(c))
         })
     }
 }

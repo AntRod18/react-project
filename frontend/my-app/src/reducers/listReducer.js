@@ -1,5 +1,6 @@
 const initialState = {
-     list: []
+     list: [],
+     components: []
 }
 
 const listReducer = (state = initialState, action) => {
@@ -12,8 +13,14 @@ const listReducer = (state = initialState, action) => {
         case "Get_Lists":
             return {
                 ...state,
-                list: [...state.list, ...action.payload]
+                list: [...action.payload]
             }
+            case "Add-Components":
+                return{
+                    ...state,
+                    components: [...state.components, action.payload]
+        
+                }
 
         default:
             return state

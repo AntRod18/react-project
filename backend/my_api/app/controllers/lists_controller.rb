@@ -5,20 +5,20 @@ class ListsController < ApplicationController
   def index
     @lists = List.all
 
-    render json: @lists
+    render json: @lists, include: :components
   end
 
   # GET /lists/1
   def show
-    render json: @list
+    render json: @list, include: :components
   end
 
   # POST /lists
   def create
     @list = List.new(list_params)
-    # @list.components.build(kind:"cpu")
+    # @list.add_components
     if @list.save
-      render json: @list, status: :created, location: @list
+      render json: @list, status: :created
     else
       render json: @list.errors, status: :unprocessable_entity
     end

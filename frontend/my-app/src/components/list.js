@@ -1,17 +1,23 @@
 import React from "react";
+import { connect } from 'react-redux';
 import {
     BrowserRouter as Router,
-    Link
+    Link,
+    Route
   } from "react-router-dom";
+  import ListComponent from "./listComponents";
+  import { fetchParts } from "../actions/parts";
 
-export default class List extends React.Component {
+class List extends React.Component {
+
+
 
     render(){
         
         const { name, id } = this.props.list
         return (
             <div id="list-container">
-                <Link to={`/lists/${id}`}>
+                <Link  to={`/lists/${id}`}>
                     { name }
                 </Link>
                 
@@ -20,3 +26,5 @@ export default class List extends React.Component {
         )
     }
 }
+
+export default List
