@@ -22,6 +22,7 @@ class ComponentForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.createComponents(this.state)
+        // window.location.reload()
         this.setState({
             kind: "",
             list_id:`${this.props.obj.id}` ,
@@ -32,19 +33,18 @@ class ComponentForm extends Component {
     
 
     render(){
-        console.log(this.state)
         return(
             <div id="component-form">
                 <form onSubmit={this.handleSubmit}>
                    <select name="kind" value={this.state.kind} onChange={this.handleChange}>
-                   <option value="processor">Processor</option>
-                   <option value="cooler">CPU Cooler</option>
-                   <option value="motherboard">Motherboard</option>
-                   <option value="memory">Memory</option>
-                   <option value="storage">Storage</option>
-                   <option value="graphics">Graphics Card</option>
-                   <option value="power">Power Supply</option>
-                   <option value="case">Case</option>
+                        <option value="processor">Processor</option>
+                        <option value="cooler">CPU Cooler</option>
+                        <option value="motherboard">Motherboard</option>
+                        <option value="memory">Memory</option>
+                        <option value="storage">Storage</option>
+                        <option value="graphics">Graphics Card</option>
+                        <option value="power">Power Supply</option>
+                        <option value="case">Case</option>
                    </select> 
                    <br></br>
                    <select name="part_id" value={this.state.part_id} onChange={this.handleChange}>

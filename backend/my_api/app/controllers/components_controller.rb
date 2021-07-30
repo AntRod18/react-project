@@ -15,11 +15,11 @@ class ComponentsController < ApplicationController
 
   # POST /components
   def create
-    # @list = List.find_by_id(params[:list_id])
+    @list = List.find_by_id(params[:list_id])
     # @part = Part.find_by_id(params[:part_id])
-    @component = Component.create(component_params)
+    @component = @list.components.build(component_params)
     if @component.save
-      render json: @component, status: :created, location: @component
+      render json: @component, status: :created
     else
       render json: @component.errors, status: :unprocessable_entity
     end

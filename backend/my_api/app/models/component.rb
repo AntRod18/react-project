@@ -4,13 +4,13 @@ class Component < ApplicationRecord
     # this component is the link between list and part
 
 
-    def add_components()
-        names = ["processor", "cooler", "motherboard", "memory",
-            "storage", "graphics", "power", "case"]
+    # def add_components()
+    #     names = ["processor", "cooler", "motherboard", "memory",
+    #         "storage", "graphics", "power", "case"]
 
-             names.each do |n|
-                self.components.build(kind:n)
-             end
+    #          names.each do |n|
+    #             self.components.build(kind:n)
+    #          end
 
-    end
+    # end
 end

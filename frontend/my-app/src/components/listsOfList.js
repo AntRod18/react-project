@@ -1,6 +1,5 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-import { fetchLists } from '../actions/list';
 import  List from './list';
 import ListForm from "./listForm";
 

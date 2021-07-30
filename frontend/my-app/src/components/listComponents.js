@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import PartsList from "./partslist"
 import ComponentForm from "./componentsForm";
 import { connect } from "react-redux";
+import CompObj from "./compobj"
 
 class ListComponent extends Component {
     
@@ -10,9 +10,8 @@ class ListComponent extends Component {
 
     render(){
         let list = this.props.lists.find( l=> l.id === parseInt(this.props.match.params.id))
-        let components = list.components.map(c => c.kind)
+        let components = list.components.map(c => <CompObj components={c} parts={this.props.parts} />)
         
-        console.log(list)
         return(
             <div>
                 <ComponentForm obj={list} />
@@ -22,6 +21,11 @@ class ListComponent extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        parts: state.partsReducer.parts
+    }
+}
 
 
-export default ListComponent
+export default connect(mapStateToProps)(ListComponent)

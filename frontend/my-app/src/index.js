@@ -10,6 +10,7 @@ import thunk from 'redux-thunk';
 import listReducer from './reducers/listReducer';
 import partsReducer from './reducers/partsReducer';
 
+
 const store = createStore(combineReducers({listReducer, partsReducer}) ,compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
  )
 

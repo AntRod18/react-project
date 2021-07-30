@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Row, Col } from 'react-bootstrap'
+import { Card, Col } from 'react-bootstrap'
 
 
 class Part extends Component {
